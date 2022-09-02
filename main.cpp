@@ -1,5 +1,5 @@
 
-#ifdef WINDOWS
+#ifdef WIN32
 #include <windows.h>
 #else
 #include <unistd.h>
@@ -41,8 +41,8 @@ void minutesTimer(int numberOfMinutes, string currentPosition, string mode) {
         string formattedSecond = to_string(second);
         formattedSecond = (formattedSecond.length() == 1) ? "0"+formattedSecond : formattedSecond;
         // sleep for a second
-        #ifdef WINDOWS
-        // sleep in windows
+        #ifdef WIN32
+        usleep(1000000);
         #else
         sleep(1);
         #endif
