@@ -42,7 +42,7 @@ void minutesTimer(int numberOfMinutes, string currentPosition, string mode) {
         formattedSecond = (formattedSecond.length() == 1) ? "0"+formattedSecond : formattedSecond;
         // sleep for a second
         #ifdef WIN32
-        usleep(1000000);
+        Sleep(1000);
         #else
         sleep(1);
         #endif
