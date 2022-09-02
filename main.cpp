@@ -16,7 +16,11 @@ int main() {
         const string currentPosition = positions[i];
         const int breakTime = (i == 3) ? 15 : 5; 
         minutesTimer(1, currentPosition, "Work");
+        cout << "Start break? (y): ";
+        cin.ignore();
         minutesTimer(1, currentPosition, "Break");
+        cout << "Start next pomo? (y): ";
+        cin.ignore();
     }
 
 
@@ -30,7 +34,7 @@ void minutesTimer(int numberOfMinutes, string currentPosition, string mode) {
         // back to start of line
         cout << "\r";
         // format current minute and second
-        int minute = floor(numberOfSeconds/60)-1;
+        int minute = floor(i/60);
         string formattedMinute = to_string(minute);
         formattedMinute = (formattedMinute.length() == 1) ? "0"+formattedMinute : formattedMinute;
         int second = i % 60;
